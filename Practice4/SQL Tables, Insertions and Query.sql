@@ -30,7 +30,7 @@ CREATE TABLE users (
 
 #Create Table to store the tweets
 CREATE TABLE tweets (
-		tweet_id int NOT NULL,
+		tweet_id int NOT NULL AUTO_INCREMENT,
         user_id int NOT NULL,
   		timestamp date NOT NULL,
         usr varchar(255) NOT NULL,
@@ -47,7 +47,7 @@ CREATE TABLE IF NOT EXISTS followers(
 
 #Create Table to store the comments
 CREATE TABLE IF NOT EXISTS comments(
-	comment_id int NOT NULL,
+	comment_id int NOT NULL AUTO_INCREMENT,
 	user_id int NOT NULL,
 	tweet_id int NOT NULL,
     text varchar(255),
@@ -80,11 +80,11 @@ ALTER TABLE tweet_like ADD FOREIGN KEY (user_id) REFERENCES users(user_id);
 ALTER TABLE tweet_like ADD FOREIGN KEY (tweet_id) REFERENCES tweets(tweet_id);
 
 #Populate users table
-INSERT INTO users (user_id, name, usr, mail, pwd, gender, phone, birthday, owner, species1, species2, species3) VALUES
-(1, 'Marta', 'marta03', 'marta03@example.com', 'pAssword123*', 'Female', '605778899', '1980-01-01', 'Yes', 'Cat', 'Dog', 'Cat'),
-(2, 'Carla', 'carla02', 'carla02@example.com', 'paSsword456/', 'Female', '708445533' , '1990-02-02', 'No', NULL, NULL, NULL),
-(3, 'Alexia', 'alexia44', 'alicej@example.com', 'passWOrd789_', 'Other', '639176698', '1985-03-03', 'Yes', 'Cat', NULL, NULL),
-(4, 'Maria', 'maria_2003', 'maria2003@example.com', 'passwOrD321!', 'Do not specify', '608545621', '2003-03-03', 'Yes', 'Ferret', 'Dog', NULL);
+INSERT INTO users (name, usr, mail, pwd, gender, phone, birthday, owner, species1, species2, species3) VALUES
+('Marta', 'marta03', 'marta03@example.com', 'pAssword123*', 'Female', '605778899', '1980-01-01', 'Yes', 'Cat', 'Dog', 'Cat'),
+('Carla', 'carla02', 'carla02@example.com', 'paSsword456/', 'Female', '708445533' , '1990-02-02', 'No', NULL, NULL, NULL),
+('Alexia', 'alexia44', 'alicej@example.com', 'passWOrd789_', 'Other', '639176698', '1985-03-03', 'Yes', 'Cat', NULL, NULL),
+('Maria', 'maria_2003', 'maria2003@example.com', 'passwOrD321!', 'Do not specify', '608545621', '2003-03-03', 'Yes', 'Ferret', 'Dog', NULL);
 
 #Populate tweets table
 INSERT INTO tweets (tweet_id, user_id, timestamp, usr, text) VALUES
@@ -103,12 +103,12 @@ INSERT INTO followers (user_id, user_id_follower) VALUES
 (3, 4);
 
 #Populate comments table
-INSERT INTO comments (comment_id, user_id, tweet_id, text) VALUES
-(1, 2, 1, "Hi!"),
-(2, 3, 1, "Great" ),
-(3, 4, 2, "Welcome :)"),
-(4, 1, 3, "You too"),
-(5, 2, 4, "Yess!");
+INSERT INTO comments (user_id, tweet_id, text) VALUES
+(2, 1, "Hi!"),
+(3, 1, "Great" ),
+(4, 2, "Welcome :)"),
+(1, 3, "You too"),
+(2, 4, "Yess!");
 
 #Populate comment_like table
 INSERT INTO comment_like (user_id, comment_id) VALUES

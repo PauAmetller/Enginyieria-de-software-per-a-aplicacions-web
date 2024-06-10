@@ -1,5 +1,5 @@
-CREATE DATABASE IF NOT EXISTS lab4;
-USE lab4;
+CREATE DATABASE IF NOT EXISTS lab41;
+USE lab41;
 
 #Create Table to store the users
 DROP TABLE IF EXISTS tweets;

@@ -124,12 +124,12 @@ INSERT INTO tweet_like (user_id, tweet_id) VALUES
 (3, 3),
 (4, 4);
 
-SELECT * FROM users;
-SELECT * FROM tweets;
-SELECT * FROM followers;
-SELECT * FROM comments;
-SELECT * FROM comment_like;
-SELECT * FROM tweet_like;
+#SELECT * FROM users;
+#SELECT * FROM tweets;
+#SELECT * FROM followers;
+#SELECT * FROM comments;
+#SELECT * FROM comment_like;
+#SELECT * FROM tweet_like;
 
 
 #QUERIES
@@ -137,3 +137,4 @@ SELECT * FROM tweet_like;
 SELECT T.* FROM tweets T
 JOIN followers F ON T.user_id = F.user_id
 WHERE F.user_id_follower = 1;
+#SELECT tweet_id,timestamp,text,usr FROM tweets AS T JOIN followers AS F ON T.user_id = F.user_id_follower WHERE T.user_id = 1 GROUP BY T.tweet_id ORDER BY timestamp DESC LIMIT 0,8 ;

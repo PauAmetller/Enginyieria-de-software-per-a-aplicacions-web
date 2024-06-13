@@ -72,13 +72,12 @@ CREATE TABLE IF NOT EXISTS tweet_like(
 ALTER TABLE tweets ADD FOREIGN KEY (user_id) REFERENCES users(user_id);
 ALTER TABLE followers ADD FOREIGN KEY (user_id) REFERENCES users(user_id);
 ALTER TABLE followers ADD FOREIGN KEY (user_id_follower) REFERENCES users(user_id);
-ALTER TABLE comments ADD FOREIGN KEY (user_id) REFERENCES users(user_id);
-ALTER TABLE comments ADD FOREIGN KEY (tweet_id) REFERENCES tweets(tweet_id);
-ALTER TABLE comment_like ADD FOREIGN KEY (user_id) REFERENCES users(user_id);
-ALTER TABLE comment_like ADD FOREIGN KEY (comment_id) REFERENCES comments(comment_id);
-ALTER TABLE tweet_like ADD FOREIGN KEY (user_id) REFERENCES users(user_id);
-ALTER TABLE tweet_like ADD FOREIGN KEY (tweet_id) REFERENCES tweets(tweet_id);
-
+ALTER TABLE comments ADD CONSTRAINT comments_fk1 FOREIGN KEY (user_id) REFERENCES users(user_id);
+ALTER TABLE comments ADD CONSTRAINT comments_fk2 FOREIGN KEY (tweet_id) REFERENCES tweets(tweet_id) ON DELETE CASCADE;
+ALTER TABLE comment_like ADD CONSTRAINT comment_like_fk1 FOREIGN KEY (user_id) REFERENCES users(user_id);
+ALTER TABLE comment_like ADD CONSTRAINT comment_like_fk2 FOREIGN KEY (comment_id) REFERENCES comments(comment_id) ON DELETE CASCADE;
+ALTER TABLE tweet_like ADD CONSTRAINT tweet_like_fk1 FOREIGN KEY (user_id) REFERENCES users(user_id);
+ALTER TABLE tweet_like ADD CONSTRAINT tweet_like_fk2 FOREIGN KEY (tweet_id) REFERENCES tweets(tweet_id) ON DELETE CASCADE;
 #Populate users table
 INSERT INTO users (name, usr, mail, pwd, gender, phone, birthday, owner, species1, species2, species3) VALUES
 ('Marta', 'marta03', 'marta03@example.com', 'pAssword123*', 'Female', '605778899', '1980-01-01', 'Yes', 'Cat', 'Dog', 'Cat'),

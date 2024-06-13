@@ -68,7 +68,6 @@ CREATE TABLE IF NOT EXISTS tweet_like(
 	PRIMARY KEY(tweet_id, user_id)  
 );
 
-
 ALTER TABLE tweets ADD FOREIGN KEY (user_id) REFERENCES users(user_id);
 ALTER TABLE followers ADD FOREIGN KEY (user_id) REFERENCES users(user_id);
 ALTER TABLE followers ADD FOREIGN KEY (user_id_follower) REFERENCES users(user_id);

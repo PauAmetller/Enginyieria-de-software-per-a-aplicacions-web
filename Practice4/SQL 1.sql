@@ -123,12 +123,12 @@ INSERT INTO tweet_like (user_id, tweet_id) VALUES
 (3, 3),
 (4, 4);
 
-SELECT * FROM users;
-SELECT * FROM tweets;
-SELECT * FROM following ORDER BY user_id;
-SELECT * FROM comments;
-SELECT * FROM comment_like;
-SELECT * FROM tweet_like;
+#SELECT * FROM users;
+#SELECT * FROM tweets;
+#SELECT * FROM following ORDER BY user_id;
+#SELECT * FROM comments;
+#SELECT * FROM comment_like;
+#SELECT * FROM tweet_like;
 
 
 #QUERIES
@@ -136,3 +136,8 @@ SELECT * FROM tweet_like;
 SELECT T.* FROM tweets T
 JOIN following F ON T.user_id = F.user_id_follower
 WHERE F.user_id = 1;
+
+
+
+
+SELECT usr FROM users WHERE usr = "mart3a03" AND user_id != 1;

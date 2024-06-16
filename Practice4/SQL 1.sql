@@ -32,7 +32,7 @@ CREATE TABLE users (
 CREATE TABLE tweets (
 		tweet_id int NOT NULL AUTO_INCREMENT,
         user_id int NOT NULL,
-  		timestamp datetime NOT NULL,
+  		postDateTime datetime NOT NULL,
         usr varchar(255) NOT NULL,
   		text varchar(255),
   		PRIMARY KEY (tweet_id), 
@@ -89,7 +89,7 @@ INSERT INTO users (name, usr, mail, pwd, gender, phone, birthday, owner, species
 ('Fer', 'fer_2003', 'fer2003@example.com', '123Abc*', 'Do not specify', '608545621', '2003-03-03', 'Yes', 'Ferret', 'Dog', NULL);
 
 #Populate tweets table
-INSERT INTO tweets (tweet_id, user_id, timestamp, usr, text) VALUES
+INSERT INTO tweets (tweet_id, user_id, postDateTime, usr, text) VALUES
 (1, 1, '2024-01-01 12:34:56', 'marta03', 'Hello!!:)'),
 (2, 2, '2024-02-01 13:45:00', 'carla02', 'This is my first tweet'),
 (3, 3, '2024-03-01 14:56:30', 'alexia44', 'Have a nice day!'),

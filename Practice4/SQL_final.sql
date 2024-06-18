@@ -21,6 +21,7 @@ CREATE TABLE users (
         species1 varchar(255),
         species2 varchar(255),
         species3 varchar(255),
+        admin boolean NOT NULL DEFAULT false,
   		PRIMARY KEY (user_id), 
   		UNIQUE KEY mail (mail),
         UNIQUE KEY usr(usr),
@@ -69,11 +70,12 @@ CREATE TABLE IF NOT EXISTS tweet_retweet(
 
 
 #Populate users table
-INSERT INTO users (name, usr, mail, pwd, gender, phone, birthday, owner, species1, species2, species3) VALUES
-('Marta', 'marta03', 'marta03@example.com', '123Abc*', 'Female', '605778899', '1980-01-01', 'Yes', 'Cat', 'Dog', 'Cat'),
-('Carla', 'carla02', 'carla02@example.com', '123Abc*', 'Female', '708445533' , '1990-02-02', 'No', NULL, NULL, NULL),
-('Alexia', 'alexia44', 'alicej@example.com', '123Abc*', 'Other', '639176698', '1985-03-03', 'Yes', 'Cat', NULL, NULL),
-('Fer', 'fer_2003', 'fer2003@example.com', '123Abc*', 'Do not specify', '608545621', '2003-03-03', 'Yes', 'Ferret', 'Dog', NULL);
+INSERT INTO users (name, usr, mail, pwd, gender, phone, birthday, owner, species1, species2, species3, admin) VALUES
+('Marta', 'marta03', 'marta03@gmail.com', '123Abc*', 'Female', '605778899', '1983-08-01', 'Yes', 'Cat', 'Dog', 'Cat', false),
+('Carla', 'carla02', 'carla02@gmail.com', '123Abc*', 'Female', '708445533' , '1990-06-02', 'No', NULL, NULL, NULL, false),
+('Alexia', 'alexia44', 'alicej@gmail.com', '123Abc*', 'Other', '639176698', '1985-04-03', 'Yes', 'Cat', NULL, NULL, false),
+('Fer', 'fer_2003', 'fer2003@gmaile.com', '123Abc*', 'Do not specify', '608545621', '2003-09-03', 'Yes', 'Ferret', 'Dog', NULL, false),
+('Admin', 'admin1', 'admin@example.com', '123Abc*', 'Male', '639137475', '2000-05-02', 'No', NULL, NULL, NULL, true);
 
 #Populate tweets table
 INSERT INTO tweets (tweet_id, user_id, postDateTime, usr, text) VALUES

@@ -34,6 +34,7 @@ CREATE TABLE tweets (
   		postDateTime datetime NOT NULL,
         usr varchar(255) NOT NULL,
   		text varchar(255),
+        isretweet bool DEFAULT FALSE,
   		PRIMARY KEY (tweet_id), 
         FOREIGN KEY (user_id) REFERENCES users(user_id),
         FOREIGN KEY (usr) REFERENCES users(usr) ON UPDATE CASCADE
@@ -90,11 +91,11 @@ INSERT INTO following (user_id, user_id_follower) VALUES
 (2, 4),
 (3, 4);
 
-SELECT * FROM users;
-SELECT * FROM tweets;
-SELECT * FROM following ORDER BY user_id;
-SELECT * FROM tweet_like;
-SELECT * FROM tweet_retweet;
+#SELECT * FROM users;
+#SELECT * FROM tweets;
+#SELECT * FROM following ORDER BY user_id;
+#SELECT * FROM tweet_like;
+#SELECT * FROM tweet_retweet;
 
 
 

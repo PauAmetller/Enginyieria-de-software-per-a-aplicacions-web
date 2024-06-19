@@ -37,7 +37,7 @@ CREATE TABLE tweets (
   		text varchar(255),
         isretweet bool DEFAULT FALSE,
   		PRIMARY KEY (tweet_id), 
-        FOREIGN KEY (user_id) REFERENCES users(user_id),
+        FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE,
         FOREIGN KEY (usr) REFERENCES users(usr) ON UPDATE CASCADE
 );    
 
@@ -46,8 +46,8 @@ CREATE TABLE IF NOT EXISTS following(
 	user_id int NOT NULL,
 	user_id_follower int NOT NULL,
 	PRIMARY KEY(user_id, user_id_follower),
-    FOREIGN KEY (user_id) REFERENCES users(user_id),
-	FOREIGN KEY (user_id_follower) REFERENCES users(user_id) 
+    FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE,
+	FOREIGN KEY (user_id_follower) REFERENCES users(user_id) ON DELETE CASCADE
 );
 
 #Create Table to store the tweet likes
@@ -55,8 +55,8 @@ CREATE TABLE IF NOT EXISTS tweet_like(
 	user_id int NOT NULL,
 	tweet_id int NOT NULL,
 	PRIMARY KEY(tweet_id, user_id),
-    FOREIGN KEY (user_id) REFERENCES users(user_id),
-    FOREIGN KEY (tweet_id) REFERENCES tweets(tweet_id)
+    FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE,
+    FOREIGN KEY (tweet_id) REFERENCES tweets(tweet_id) ON DELETE CASCADE
 );
 
 #Create Table to store the retweets 
@@ -64,8 +64,8 @@ CREATE TABLE IF NOT EXISTS tweet_retweet(
 	user_id int NOT NULL,
 	tweet_id int NOT NULL,
 	PRIMARY KEY(tweet_id, user_id),
-    FOREIGN KEY (user_id) REFERENCES users(user_id),
-    FOREIGN KEY (tweet_id) REFERENCES tweets(tweet_id)
+    FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE,
+    FOREIGN KEY (tweet_id) REFERENCES tweets(tweet_id) ON DELETE CASCADE
 );
 
 

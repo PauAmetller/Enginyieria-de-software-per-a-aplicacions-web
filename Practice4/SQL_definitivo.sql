@@ -34,7 +34,7 @@ CREATE TABLE tweets (
         user_id int NOT NULL,
   		postDateTime datetime NOT NULL,
         usr varchar(255) NOT NULL,
-  		text varchar(255),
+  		text varchar(280),
         isretweet bool DEFAULT FALSE,
   		PRIMARY KEY (tweet_id), 
         FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE,

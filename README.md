@@ -1,7 +1,8 @@
-Instructions to deploy the project:
-- Execute the SQL file, this will generate the lab4 database
-- Execute the web project from the MainController
-- Acces different users:
-  - Anonymous: Click on the main page button (pet paw icon) to view its functionalities
-  - Admin: Log in as user: admin1, password: 123Abc*
-  - Registered user: Register a new user or log in as user: marta03, alexia44, carla02 or fer_2003 all with password: 123Abc*
+Instruccions per desplegar el projecte:
+
+- Executa el fitxer SQL, això generarà la base de dades lab4
+- Executa el projecte web des del MainController
+- Accedeix a diferents usuaris:
+  - Anònim: fes clic al botó de la pàgina principal (icona de la petpaw) per veure les seves funcionalitats
+  - Administrador: Inicia sessió com a usuari: admin1, contrasenya: 123Abc*
+  - Usuari registrat: Registra un nou usuari o inica sessió com a usuari: marta03, alexia44, carla02 o fer_2003 tots amb contrasenya: 123Abc*

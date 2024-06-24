@@ -1,6 +1,6 @@
 Instruccions per desplegar el projecte:
 
-- Executa el fitxer SQL, això generarà la base de dades lab4
+- Per executar el fitxer SQL cal tenir una database de nom lab4
 - Executa el projecte web des del MainController
 - Accedeix a diferents usuaris:
   - Anònim: fes clic al botó de la pàgina principal (icona de la petpaw) per veure les seves funcionalitats
